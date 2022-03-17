@@ -11,7 +11,10 @@
 
 var currentTurnInput = document.querySelector('.current-turn-text');
 var resetBtn = document.querySelector('.reset-game-btn');
+var winnerTxt = document.querySelector('.winner');
+
 resetBtn.addEventListener('click', resetBoard);
+currentTurnInput.textContent = gameBoard.getCurrentTurn();
 
 function updateCurrentTurn() {
     currentTurnInput.textContent = gameBoard.getCurrentTurn();
@@ -40,6 +43,7 @@ function setCell(event) {
     console.log(gameBoard.move(parseInt(row), parseInt(col)));
     event.currentTarget.textContent = gameBoard.getBoard()[row][col];
     updateCurrentTurn();
+    updateFinishGameUI();
 }
 
 function* getBoardCells() {
@@ -50,6 +54,10 @@ function* getBoardCells() {
             yield document.querySelector(`[data-row-column="${dataAttribute}"]`);
         }
     }
+}
+
+function updateFinishGameUI() {
+    winnerTxt.textContent = gameBoard.checkFinishedGame() ? gameBoard.getWinner() : "";
 }
 
 function resetBoard() {
