@@ -1,0 +1,21 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.board > section {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.board > section > div {
+  padding: 1em;
+  font-size: 4rem;
+  border: 1px solid black;
+}
+
+.winner {
+  display: none;
+}
+
+/*# sourceMappingURL=app.css.map */
