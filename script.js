@@ -23,8 +23,8 @@ function initBoard() {
     for (let row = 0; row < board.length; row++) {
         for (let col = 0; col < board[row].length; col++) {
             let dataAttribute = `${row},${col}`;
-            let cell = document.querySelector(`[data-row-col="${dataAttribute}"]`);
-            console.log(cell);
+            let cell = document.querySelector(`[data-row-column="${dataAttribute}"]`);
+            cell.textContent = board[row][col];
         }
     }
 }
