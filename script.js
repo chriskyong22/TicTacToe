@@ -64,6 +64,7 @@ function resetBoard() {
     gameBoard.resetBoard();
     setBoard();
     updateCurrentTurn();
+    updateFinishGameUI();
 }
 
 initBoard();
